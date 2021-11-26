@@ -29,7 +29,8 @@ const pqrSchema = {
 
 //Schema for each PQR
  const Pqr = mongoose.model("pqr", pqrSchema);
-///////////////////////Request Targettomh All the PQRs ////////////////////////////
+
+///////////////////////Request Targetting All the PQRs ////////////////////////////
 
 app.route("/pqr")
 .get(function(req, res){
@@ -42,6 +43,7 @@ app.route("/pqr")
   });
 }).post(  bodyParser.text({ type: ['json', 'text']}),
  function(req, res ){
+
    const pqrToSave = new Pqr ({
      type : JSON.parse(req.body).type,
      user: parseInt(JSON.parse(req.body).user),
@@ -55,9 +57,49 @@ app.route("/pqr")
       res.send(err);
     }
    });
+}).delete(function(req, res ){
+  Pqr.deleteMany({}, function(err){
+    if(!err){
+      res.send("PQRs deleted");
+    }else{
+      res.send(err);
+    }
+  });
 });
 
+///////////////////////Request Targetting one PQRs ////////////////////////////
 
+app.route("/pqr/:pqr_id")
+.get(function(req,res){
+  Pqr.findOne({_id:req.params.pqr_id}, function(err, foundPQR){
+    if(foundPQR){
+      res.send(foundPQR);
+    }else{
+      res.send("No PQRs matching that product");
+    }
+  });
+})
+.put( bodyParser.text({ type: ['json', 'text']}),
+function(req, res){
+  const jsonBody = JSON.parse(req.body);
+  const specificArticle = req.params.articlesName;
+Pqr.updateOne(
+  {_id:req.params.pqr_id},
+   {type: jsonBody.type,
+   content: jsonBody.content,
+   user:jsonBody.user},
+    function(err, result){
+     if(!err){
+       console.log("PQR updated");
+     }
+   });
+}).delete(function(req, res){
+  Pqr.deleteOne({_id: req.params.pqr_id}, function(err){
+    if(!err){
+      res.send("PQR Deleted");
+    }
+  });
+});
 
 
 
