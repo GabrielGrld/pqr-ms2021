@@ -45,31 +45,23 @@ Por lo tanto al realizar cualquier petición tipo GET se obtendra esta estructur
 ```
 El campo date no es necesario escribirlo debido a que se llena automaticamente cuando se crea el registro.
 
-**POSTMAN**
+## POSTMAN
 ---
 
-##GET
+### GET
 
-el primer metódo revisar será el metódo GET, en la siguiente imagen es posible apreciar como se realiza la petición de TIPO GET a la
+el primer método a revisar será el metódo GET, en la siguiente imagen es posible apreciar como se realiza la petición de TIPO GET a la
 URL 
 
 <img src="https://i.imgur.com/Oz0NwfC.png" width="1000" >
 
 
 
+### POST 
+
 En el segundo metódo 
 
 El campo date no es necesario escribirlo debido a que se llena automaticamente cuando se crea el registro.
-
-**POSTMAN**
----
-
-## GET
-
-el primer metódo revisar será el metódo GET, en la siguiente imagen es posible apreciar como se realiza la petición de TIPO GET a la
-URL 
-
-## POST 
 
 En este caso se selecciona la opción en el body, se selecciona la opción raw, con formato tipo JSON, en la siguiente imagen se puede ver
 esta prueba en Postman
