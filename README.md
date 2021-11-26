@@ -32,12 +32,12 @@ Por lo tanto al realizar cualquier petición tipo GET se obtendra esta estructur
  en el BODY, la opción raw y luego la que dice JSON. En el siguiente ejemplo será posible observar
  como se debe utilizar este formato:
 
-`
+```
  {
     "type":"Q",
     "user": 2,
     "product_id": 4,
     "content" : "El producto me ha presentado una falla recurrente luego de realizar dos reemplazos "
 }
-`
+```
 El campo date no es necesario escribirlo debido a que se llena automaticamente cuando se crea el registro.
