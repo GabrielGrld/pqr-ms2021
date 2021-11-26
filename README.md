@@ -47,4 +47,4 @@ El campo date no es necesario escribirlo debido a que se llena automaticamente c
 
 el primer metódo revisar será el metódo GET, en la siguiente imagen es posible apreciar como se realiza la petición de TIPO GET a la
 URL 
-<img src="https://i.imgur.com/Oz0NwfC.png" width="100" height="100">
+<img src="https://i.imgur.com/Oz0NwfC.png" width="1000" >
