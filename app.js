@@ -18,6 +18,7 @@ mongoose.connect('mongodb://localhost:27017/pqrDB');
 
 
 
+
 //Model for each Article
 const pqrSchema = {
   type : String,   // Type.  P: Petición, Q: Queja, R: Reclamo
@@ -75,7 +76,7 @@ app.route("/pqr/:pqr_id")
     if(foundPQR){
       res.send(foundPQR);
     }else{
-      res.send("No PQRs matching that product");
+      res.send("No PQRs matching that id");
     }
   });
 })
@@ -90,21 +91,28 @@ Pqr.updateOne(
    user:jsonBody.user},
     function(err, result){
      if(!err){
-       console.log("PQR updated");
-     }
+      if( result.matchedCount ===0){
+       res.send("PQR does not exist");
+     }else{
+       res.send("PQR udpated");
+      }
+
+     }else{
+      res.send(err);
+}
    });
-}).delete(function(req, res){
-  Pqr.deleteOne({_id: req.params.pqr_id}, function(err){
+})
+
+.delete(function(req, res){
+  Pqr.deleteOne({_id: req.params.pqr_id}, function(err, result){
     if(!err){
-      res.send("PQR Deleted");
+      if(result.deletedCount === 0){
+        res.send("PQR does not exist");
+      }else{
+      res.send("PQR Deleted");}
     }
   });
 });
-
-
-
-
-
 
  app.listen(3000, function() {
    console.log("Server started on port 3000");
