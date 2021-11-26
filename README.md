@@ -46,10 +46,10 @@ Por lo tanto al realizar cualquier petición tipo GET se obtendra esta estructur
 El campo date no es necesario escribirlo debido a que se llena automaticamente cuando se crea el registro.
 
 ## POSTMAN
----
+
 
 ### GET
-
+---
 el primer método a revisar será el metódo GET, en la siguiente imagen es posible apreciar como se realiza la petición de TIPO GET a la
 URL 
 
@@ -58,6 +58,7 @@ URL
 
 
 ### POST 
+---
 
 En el segundo metódo 
 
