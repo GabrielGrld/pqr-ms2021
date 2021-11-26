@@ -71,7 +71,7 @@ URL
 En este caso se selecciona la opción en el body, se selecciona la opción raw, con formato tipo JSON, en la siguiente imagen se puede ver
 esta prueba en Postman
 
-<img src="https://i.imgur.com/UFNTpSV.png" width="1000" >
+<img src="https://i.imgur.com/UFNTpSV.png" width="1000" ></img>
 
 
 
